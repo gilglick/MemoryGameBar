@@ -92,7 +92,7 @@ class GameController: UIViewController {
                 count+=1
             }
         }
-        deck.shuffle()
+        //deck.shuffle()
         for i in 0 ..< numOfRows {
             
             let row : UIStackView = createRow()
@@ -139,8 +139,7 @@ class GameController: UIViewController {
         sender.remove()
         //make sure its not the end of game
         if(isWon()){
-            
-            newGame()
+            performSegue(withIdentifier: "name", sender: self)
         }
         
         isClickable = true
@@ -196,7 +195,7 @@ class GameController: UIViewController {
         resetCards()
         resetMoves()
         resetTimer()
-        deck.shuffle()
+        //deck.shuffle()
     }
     
     func resetCards() {
@@ -210,7 +209,7 @@ class GameController: UIViewController {
     }
     
     func resetMoves() {
-        
+    
         numberOfMoves = 0
         game_LBL_moveCounter.text  = String(numberOfMoves)
         
@@ -221,6 +220,11 @@ class GameController: UIViewController {
         timer = 0
         game_LBL_timer.text  = String(timer)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! HighScoreController
+        vc.finalName = self.game_LBL_timer.text!
     }
     
 }
