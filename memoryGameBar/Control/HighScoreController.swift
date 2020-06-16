@@ -9,6 +9,8 @@ class HighScoreController : UIViewController{
         
     }
     
+    
+    
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
