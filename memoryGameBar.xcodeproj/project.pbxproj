@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		07A2CBED249976C300C1BB63 /* RankRowViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A2CBEC249976C300C1BB63 /* RankRowViewCell.swift */; };
 		07A2CBEF24997B6B00C1BB63 /* RankRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A2CBEE24997B6B00C1BB63 /* RankRowModel.swift */; };
+		07CC0C1C249A6BA80096810F /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC0C1B249A6BA80096810F /* Converter.swift */; };
 		07CD6F262498FD7C00C2BDDA /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD6F252498FD7C00C2BDDA /* MainController.swift */; };
 		07CD6F2A249908EF00C2BDDA /* HighScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD6F29249908EF00C2BDDA /* HighScoreController.swift */; };
 		C709052A244A2C57004EEA41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7090529244A2C57004EEA41 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		07A2CBEC249976C300C1BB63 /* RankRowViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankRowViewCell.swift; sourceTree = "<group>"; };
 		07A2CBEE24997B6B00C1BB63 /* RankRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankRowModel.swift; sourceTree = "<group>"; };
+		07CC0C1B249A6BA80096810F /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		07CD6F252498FD7C00C2BDDA /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		07CD6F29249908EF00C2BDDA /* HighScoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreController.swift; sourceTree = "<group>"; };
 		C7090526244A2C57004EEA41 /* memoryGameBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memoryGameBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				C7FD88D1244D818D00BD1BE9 /* Card.swift */,
 				07A2CBEC249976C300C1BB63 /* RankRowViewCell.swift */,
 				07A2CBEE24997B6B00C1BB63 /* RankRowModel.swift */,
+				07CC0C1B249A6BA80096810F /* Converter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				C709052E244A2C57004EEA41 /* GameController.swift in Sources */,
 				07A2CBED249976C300C1BB63 /* RankRowViewCell.swift in Sources */,
 				C7FD88D2244D818D00BD1BE9 /* Card.swift in Sources */,
+				07CC0C1C249A6BA80096810F /* Converter.swift in Sources */,
 				C709052A244A2C57004EEA41 /* AppDelegate.swift in Sources */,
 				C709052C244A2C57004EEA41 /* SceneDelegate.swift in Sources */,
 				07CD6F262498FD7C00C2BDDA /* MainController.swift in Sources */,

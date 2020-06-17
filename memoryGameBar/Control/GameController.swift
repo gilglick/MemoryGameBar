@@ -24,6 +24,9 @@ class GameController: UIViewController {
     var numberOfMoves : Int = 0
     var timer : Int = 0
     
+    var rankRowModel:RankRowModel = RankRowModel()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
@@ -224,7 +227,8 @@ class GameController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var vc = segue.destination as! HighScoreController
-        vc.finalName = self.game_LBL_timer.text!
+        vc.rankRowModel = self.rankRowModel
+        vc.rankRowModel.timer = self.timer
     }
     
 }

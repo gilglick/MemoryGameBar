@@ -85,6 +85,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QfH-3A-GZx"/>
                     <connections>
+                        <outlet property="HighScore_MAP_map" destination="sX7-bG-pno" id="vok-gU-Ztd"/>
                         <outlet property="HighScore_TV_Ranks" destination="URM-St-fjj" id="OyD-Ie-F1d"/>
                     </connections>
                 </viewController>
@@ -114,7 +115,7 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="play-button"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="Xoi-Zm-Yst"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="play" id="Xoi-Zm-Yst"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcT-fn-Hds">
