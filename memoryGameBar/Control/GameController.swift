@@ -113,10 +113,8 @@ class GameController: UIViewController {
         
         sender.flip()
         if(firstCard == nil){
-            
             firstCard = sender
         } else {
-            
             isClickable = false
             checkForMatches(sender: sender)
         }
@@ -130,7 +128,6 @@ class GameController: UIViewController {
             
             playerGuessedWrong(sender: sender)
         } else {
-            
             playerGuessedRight(sender: sender)
         }
     }
@@ -144,9 +141,7 @@ class GameController: UIViewController {
         if(isWon()){
             performSegue(withIdentifier: "afterGame", sender: self)
         }
-        
         isClickable = true
-        
     }
     
     /*Handle the case the player dont found match*/
@@ -198,13 +193,12 @@ class GameController: UIViewController {
         resetCards()
         resetMoves()
         resetTimer()
-        //deck.shuffle()
+        deck.shuffle()
     }
     
     func resetCards() {
         
         for card in deck {
-            
             card.flip()
             card.add()
             card.isFlipped = false
@@ -212,21 +206,19 @@ class GameController: UIViewController {
     }
     
     func resetMoves() {
-    
         numberOfMoves = 0
         game_LBL_moveCounter.text  = String(numberOfMoves)
         
     }
     
     func resetTimer() {
-        
         timer = 0
         game_LBL_timer.text  = String(timer)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! HighScoreController
+        let vc = segue.destination as! HighScoreController
         vc.rankRowModel = self.rankRowModel
         vc.rankRowModel.timer = self.timer
     }

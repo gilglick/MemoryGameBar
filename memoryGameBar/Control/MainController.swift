@@ -1,11 +1,3 @@
-//
-//  MainController.swift
-//  memoryGameBar
-//
-//  Created by user166560 on 6/16/20.
-//  Copyright © 2020 Gil Glick. All rights reserved.
-//
-
 import UIKit
 import Foundation
 import CoreLocation
@@ -36,14 +28,12 @@ class MainController: UIViewController {
     	
 }
 
-// MARK: - LOCATION HANDLING
 extension MainController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             rankRowModel.latitude = location.coordinate.latitude
             rankRowModel.longitude = location.coordinate.longitude
-            print("Got the location")
         }
     }
     

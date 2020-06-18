@@ -7,6 +7,7 @@ class HighScoreController : UIViewController, UITableViewDelegate, UITableViewDa
    
     @IBOutlet weak var HighScore_MAP_map: MKMapView!
     @IBOutlet weak var HighScore_TV_Ranks: UITableView!
+    
     var converter:Converter = Converter()
     var rows = [RankRowModel]()
     var rankRowModel:RankRowModel = RankRowModel()
@@ -17,8 +18,6 @@ class HighScoreController : UIViewController, UITableViewDelegate, UITableViewDa
         navigationController?.setNavigationBarHidden(false, animated: false)
         HighScore_TV_Ranks.delegate = self
         HighScore_TV_Ranks.dataSource = self
-        
-        
         if rankRowModel.timer != 0 {
             updateTableView(newRankRowModel: self.rankRowModel)
         }
@@ -28,7 +27,7 @@ class HighScoreController : UIViewController, UITableViewDelegate, UITableViewDa
         setMarkerOnMap(rowsList: self.rows)
 
     }
-    
+
     
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -36,12 +35,12 @@ class HighScoreController : UIViewController, UITableViewDelegate, UITableViewDa
     
     func writeToLocalStorage(rowsList: [RankRowModel]){
         let defaults = UserDefaults.standard
-        defaults.set(converter.playerListToJson(rowsList: rowsList), forKey: "storage")
+        defaults.set(converter.rowsListToJson(rowsList: rowsList), forKey: "storage")
     }
     
     func readFromLocalStorage() -> [RankRowModel]{
         let defaults = UserDefaults.standard
-        if let newList: [RankRowModel] = converter.jsonToPlayerList(jsonPlayerList: defaults.string(forKey: "storage") ?? ""){
+        if let newList: [RankRowModel] = converter.jsonTorowsList(jsonRowsList: defaults.string(forKey: "storage") ?? ""){
             return newList
         }
         return [RankRowModel]()
@@ -59,9 +58,7 @@ class HighScoreController : UIViewController, UITableViewDelegate, UITableViewDa
             rowsListFromStorage.append(newRankRowModel)
             writeToLocalStorage(rowsList: rowsListFromStorage.sorted(by: {$0.timer < $1.timer}))
         }
-        
-        self.rows = readFromLocalStorage()
-        
+                self.rows = readFromLocalStorage()
         
     }
     
@@ -70,12 +67,12 @@ class HighScoreController : UIViewController, UITableViewDelegate, UITableViewDa
        }
        
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = self.HighScore_TV_Ranks.dequeueReusableCell(withIdentifier: "RankRowViewCell", for: indexPath) as? RankRowViewCell
+        let cell = self.HighScore_TV_Ranks.dequeueReusableCell(withIdentifier: "RankRowViewCell", for: indexPath) as? RankRowViewCell
         cell?.HighScore_LBL_Timer.text = String(rows[indexPath.row].timer)
         cell?.HighScore_LBL_Date.text = rows[indexPath.row].date
-        
         return cell!
        }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         zoomIn(rankRowModel: rows[indexPath.row])
     }
@@ -102,4 +99,3 @@ class HighScoreController : UIViewController, UITableViewDelegate, UITableViewDa
         let region = MKCoordinateRegion(center: zoomIn, latitudinalMeters: 800, longitudinalMeters: 800)
         HighScore_MAP_map.setRegion(region, animated: true)    }
 }
-
