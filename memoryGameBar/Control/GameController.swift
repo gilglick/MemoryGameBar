@@ -142,7 +142,7 @@ class GameController: UIViewController {
         sender.remove()
         //make sure its not the end of game
         if(isWon()){
-            performSegue(withIdentifier: "name", sender: self)
+            performSegue(withIdentifier: "afterGame", sender: self)
         }
         
         isClickable = true

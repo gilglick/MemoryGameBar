@@ -17,20 +17,16 @@ class HighScoreController : UIViewController, UITableViewDelegate, UITableViewDa
         navigationController?.setNavigationBarHidden(false, animated: false)
         HighScore_TV_Ranks.delegate = self
         HighScore_TV_Ranks.dataSource = self
+        
+        
         if rankRowModel.timer != 0 {
             updateTableView(newRankRowModel: self.rankRowModel)
-            setMarkerOnMap(rowsList: self.rows)
         }
         else {
             rows = readFromLocalStorage()
         }
+        setMarkerOnMap(rowsList: self.rows)
 
-//        if(viewActionContext == "display_score"){
-//            self.playerScores = readFromLocalStorage()
-//        }else{
-//            updateTableView(newPlayer: self.currentPlayerPlayed)
-//        }
-//        setMarkerOnMap(playerList:  self.playerScores)
     }
     
     
@@ -80,7 +76,10 @@ class HighScoreController : UIViewController, UITableViewDelegate, UITableViewDa
         
         return cell!
        }
-       
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        zoomIn(rankRowModel: rows[indexPath.row])
+    }
+    
     func setMarkerOnMap(rowsList: [RankRowModel]){
         if(!rowsList.isEmpty){
             for row in rowsList {

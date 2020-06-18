@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8Gd-re-yIv">
-                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                                <rect key="frame" x="10" y="98" width="394" height="754"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="URM-St-fjj">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="394"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="372"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RankRowViewCell" id="R9k-q0-29t" customClass="RankRowViewCell" customModule="memoryGameBar" customModuleProvider="target">
@@ -29,20 +29,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="394" height="62.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/2001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIA-ZR-JYQ">
-                                                            <rect key="frame" x="39.999999999999993" y="21" width="84.333333333333314" height="20.666666666666671"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Jan 01, 2001 at 11:59:59 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIA-ZR-JYQ">
+                                                            <rect key="frame" x="40.000000000000014" y="21" width="215.33333333333337" height="20.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bR5-DR-VbR">
-                                                            <rect key="frame" x="144.33333333333334" y="21" width="46" height="20.666666666666671"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uId-Tc-hun">
-                                                            <rect key="frame" x="210.33333333333334" y="21" width="10.333333333333343" height="20.666666666666671"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uId-Tc-hun">
+                                                            <rect key="frame" x="285.33333333333331" y="21" width="78.666666666666686" height="20.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -51,25 +45,22 @@
                                                     <constraints>
                                                         <constraint firstAttribute="bottomMargin" secondItem="lIA-ZR-JYQ" secondAttribute="bottom" constant="10" id="AjC-Cp-rdi"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="uId-Tc-hun" secondAttribute="bottom" constant="10" id="Lyt-0G-HPB"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="bR5-DR-VbR" secondAttribute="bottom" constant="10" id="M8g-23-tNz"/>
+                                                        <constraint firstItem="uId-Tc-hun" firstAttribute="leading" secondItem="lIA-ZR-JYQ" secondAttribute="trailing" constant="30" id="NtH-cV-lMa"/>
                                                         <constraint firstItem="lIA-ZR-JYQ" firstAttribute="leading" secondItem="wIn-0z-fow" secondAttribute="leadingMargin" constant="20" id="XTG-7N-8dA"/>
-                                                        <constraint firstItem="bR5-DR-VbR" firstAttribute="top" secondItem="wIn-0z-fow" secondAttribute="topMargin" constant="10" id="dgG-Tx-jbC"/>
                                                         <constraint firstItem="lIA-ZR-JYQ" firstAttribute="top" secondItem="wIn-0z-fow" secondAttribute="topMargin" constant="10" id="hmO-6r-GX6"/>
-                                                        <constraint firstItem="bR5-DR-VbR" firstAttribute="leading" secondItem="lIA-ZR-JYQ" secondAttribute="trailing" constant="20" id="iU3-MG-Xpj"/>
                                                         <constraint firstItem="uId-Tc-hun" firstAttribute="top" secondItem="wIn-0z-fow" secondAttribute="topMargin" constant="10" id="inL-KJ-oWh"/>
-                                                        <constraint firstItem="uId-Tc-hun" firstAttribute="leading" secondItem="bR5-DR-VbR" secondAttribute="trailing" constant="20" id="kWn-QC-cej"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="uId-Tc-hun" secondAttribute="trailing" constant="10" id="myP-r3-Fri"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="HighScore_LBL_Date" destination="lIA-ZR-JYQ" id="ytR-Jl-u2M"/>
-                                                    <outlet property="HighScore_LBL_Time" destination="bR5-DR-VbR" id="4tr-An-jAf"/>
                                                     <outlet property="HighScore_LBL_Timer" destination="uId-Tc-hun" id="AYU-Tp-eAO"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sX7-bG-pno">
-                                        <rect key="frame" x="0.0" y="404" width="394" height="394"/>
+                                        <rect key="frame" x="0.0" y="382" width="394" height="372"/>
                                     </mapView>
                                 </subviews>
                             </stackView>
@@ -301,7 +292,7 @@
                         <outlet property="game_LBL_moveCounter" destination="fSs-OY-UlH" id="9IW-Fe-dXm"/>
                         <outlet property="game_LBL_timer" destination="jd9-3j-K0i" id="rZk-1j-Tzt"/>
                         <outlet property="game_STACKVIEW_cardsHolder" destination="PCO-SX-cZi" id="8GT-uz-fAG"/>
-                        <segue destination="MnP-4z-6vB" kind="presentation" identifier="name" modalPresentationStyle="fullScreen" id="wXu-b5-hNP"/>
+                        <segue destination="MnP-4z-6vB" kind="show" identifier="afterGame" id="wXu-b5-hNP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
