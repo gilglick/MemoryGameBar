@@ -25,7 +25,7 @@ class GameController: UIViewController {
     var timer : Int = 0
     
     var rankRowModel:RankRowModel = RankRowModel()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,7 +95,7 @@ class GameController: UIViewController {
                 count+=1
             }
         }
-        //deck.shuffle()
+        deck.shuffle()
         for i in 0 ..< numOfRows {
             
             let row : UIStackView = createRow()

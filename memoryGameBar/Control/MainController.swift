@@ -9,7 +9,7 @@ class MainController: UIViewController {
     
     var rankRowModel:RankRowModel = RankRowModel()
     var locationManager:CLLocationManager!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -17,7 +17,7 @@ class MainController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.requestLocation()
-
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "play" {
@@ -25,7 +25,7 @@ class MainController: UIViewController {
             vc.rankRowModel = self.rankRowModel
         }
     }
-    	
+    
 }
 
 extension MainController: CLLocationManagerDelegate {

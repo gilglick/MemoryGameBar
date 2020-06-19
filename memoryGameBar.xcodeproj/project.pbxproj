@@ -71,8 +71,8 @@
 		070DBF7F2471B2F100087EB6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C7FD88D1244D818D00BD1BE9 /* Card.swift */,
 				07A2CBEC249976C300C1BB63 /* RankRowViewCell.swift */,
+				C7FD88D1244D818D00BD1BE9 /* Card.swift */,
 				07A2CBEE24997B6B00C1BB63 /* RankRowModel.swift */,
 				07CC0C1B249A6BA80096810F /* Converter.swift */,
 			);

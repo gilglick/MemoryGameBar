@@ -4,7 +4,7 @@ import MapKit
 import Foundation
 
 class HighScoreController : UIViewController, UITableViewDelegate, UITableViewDataSource{
-   
+    
     @IBOutlet weak var HighScore_MAP_map: MKMapView!
     @IBOutlet weak var HighScore_TV_Ranks: UITableView!
     
@@ -25,9 +25,8 @@ class HighScoreController : UIViewController, UITableViewDelegate, UITableViewDa
             rows = readFromLocalStorage()
         }
         setMarkerOnMap(rowsList: self.rows)
-
+        
     }
-
     
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -45,6 +44,12 @@ class HighScoreController : UIViewController, UITableViewDelegate, UITableViewDa
         }
         return [RankRowModel]()
     }
+    func clearStorage(){
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
+        
+    }
     
     func updateTableView(newRankRowModel: RankRowModel){
         var rowsListFromStorage = readFromLocalStorage()
@@ -58,20 +63,20 @@ class HighScoreController : UIViewController, UITableViewDelegate, UITableViewDa
             rowsListFromStorage.append(newRankRowModel)
             writeToLocalStorage(rowsList: rowsListFromStorage.sorted(by: {$0.timer < $1.timer}))
         }
-                self.rows = readFromLocalStorage()
+        self.rows = readFromLocalStorage()
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rows.count
-       }
-       
-       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.HighScore_TV_Ranks.dequeueReusableCell(withIdentifier: "RankRowViewCell", for: indexPath) as? RankRowViewCell
         cell?.HighScore_LBL_Timer.text = String(rows[indexPath.row].timer)
         cell?.HighScore_LBL_Date.text = rows[indexPath.row].date
         return cell!
-       }
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         zoomIn(rankRowModel: rows[indexPath.row])
